@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:music_alarm/sign_up.dart';
 
-import 'login.dart';
-
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,43 +31,39 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 100),
                   _buildButton(
                     icon: Icons.mail_outline,
-                    text: 'メールアドレスで登録',
+                    text: 'メールアドレスでログイン',
                   ),
                   SizedBox(height: 20),
                   _buildButton(
                     icon: Icons.mail_outline,
-                    text: 'Googleで会員登録',
+                    text: 'Googleでログイン',
                   ),
                   SizedBox(height: 20),
                   _buildButton(
                     icon: Icons.mail_outline,
-                    text: 'Appleで会員登録',
-                  ),
-                  SizedBox(height: 20),
-                  _buildButton(
-                    icon: Icons.mail_outline,
-                    text: 'ゲストで利用',
+                    text: 'Appleでログイン',
                   ),
                   SizedBox(height: 30),
                   TextButton(
                     onPressed: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => LoginScreen(),
-                          ));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignUpScreen(),
+                        ),
+                      );
                     },
                     child: Text(
-                      'ログインはこちら',
+                      '登録がまだの方はこちら',
                       style: TextStyle(
                         decoration: TextDecoration.underline,
                       ),
                     ),
-                  ),
+                  )
                 ],
               ),
             ),
-          ),
+          )
         ],
       ),
     );
