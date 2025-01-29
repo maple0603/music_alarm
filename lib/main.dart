@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_alarm/sign_up.dart';
+import 'package:music_alarm/setting.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SignUpScreen(),
+      // home: const SignUpScreen(),
+      home: const SettingScreen(),
     );
   }
 }
