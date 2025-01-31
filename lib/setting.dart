@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_alarm/start_page.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 class SettingScreen extends StatefulWidget {
@@ -36,7 +37,10 @@ class _SettingScreenState extends State<SettingScreen> {
               SettingsTile.navigation(
                 leading: Icon(Icons.account_circle),
                 title: Text('プロフィール'),
-                onPressed: (context) {},
+                onPressed: (context) {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => StartScreen()));
+                },
               ),
             ],
           ),

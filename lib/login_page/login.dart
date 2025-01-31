@@ -12,70 +12,73 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          Align(
-            alignment: Alignment.topCenter,
-            child: Padding(
-              padding:
-                  EdgeInsets.only(top: MediaQuery.of(context).size.height / 5),
-              child: Column(
-                children: [
-                  Text(
-                    'WakeUp',
-                    style: TextStyle(
-                      fontSize: 25.0,
-                    ),
-                  ),
-                  SizedBox(height: 100),
-                  _buildButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MailLoginScreen(),
-                        ),
-                      );
-                    },
-                    icon: Icons.mail_outline,
-                    text: 'メールアドレスでログイン',
-                  ),
-                  SizedBox(height: 20),
-                  _buildButton(
-                    onPressed: () {},
-                    icon: Icons.mail_outline,
-                    text: 'Googleでログイン',
-                  ),
-                  SizedBox(height: 20),
-                  _buildButton(
-                    onPressed: () {},
-                    icon: Icons.mail_outline,
-                    text: 'Appleでログイン',
-                  ),
-                  SizedBox(height: 30),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SignUpScreen(),
-                        ),
-                      );
-                    },
-                    child: Text(
-                      '登録がまだの方はこちら',
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Stack(
+          children: [
+            Align(
+              alignment: Alignment.topCenter,
+              child: Padding(
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height / 5),
+                child: Column(
+                  children: [
+                    Text(
+                      'WakeUp',
                       style: TextStyle(
-                        decoration: TextDecoration.underline,
+                        fontSize: 25.0,
                       ),
                     ),
-                  )
-                ],
+                    SizedBox(height: 100),
+                    _buildButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MailLoginScreen(),
+                          ),
+                        );
+                      },
+                      icon: Icons.mail_outline,
+                      text: 'メールアドレスでログイン',
+                    ),
+                    SizedBox(height: 20),
+                    _buildButton(
+                      onPressed: () {},
+                      icon: Icons.mail_outline,
+                      text: 'Googleでログイン',
+                    ),
+                    SizedBox(height: 20),
+                    _buildButton(
+                      onPressed: () {},
+                      icon: Icons.mail_outline,
+                      text: 'Appleでログイン',
+                    ),
+                    SizedBox(height: 30),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SignUpScreen(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        '登録がまだの方はこちら',
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
