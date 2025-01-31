@@ -10,18 +10,21 @@ class StartScreen extends StatefulWidget {
 class _StartScreenState extends State<StartScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Stack(
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Image.asset('assets/images/sample.png'),
-              ],
-            ),
-          ],
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        body: Center(
+          child: Stack(
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset('assets/images/sample.png'),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
