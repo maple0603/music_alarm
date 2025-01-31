@@ -12,64 +12,67 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          Align(
-            alignment: Alignment.topCenter,
-            child: Padding(
-              padding:
-                  EdgeInsets.only(top: MediaQuery.of(context).size.height / 5),
-              child: Column(
-                children: [
-                  Text(
-                    'WakeUp',
-                    style: TextStyle(
-                      fontSize: 25.0,
-                    ),
-                  ),
-                  SizedBox(height: 100),
-                  _buildButton(
-                    icon: Icons.mail_outline,
-                    text: 'メールアドレスで登録',
-                  ),
-                  SizedBox(height: 20),
-                  _buildButton(
-                    icon: Icons.mail_outline,
-                    text: 'Googleで会員登録',
-                  ),
-                  SizedBox(height: 20),
-                  _buildButton(
-                    icon: Icons.mail_outline,
-                    text: 'Appleで会員登録',
-                  ),
-                  SizedBox(height: 20),
-                  _buildButton(
-                    icon: Icons.mail_outline,
-                    text: 'ゲストで利用',
-                  ),
-                  SizedBox(height: 30),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => LoginScreen(),
-                          ));
-                    },
-                    child: Text(
-                      'ログインはこちら',
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Stack(
+          children: [
+            Align(
+              alignment: Alignment.topCenter,
+              child: Padding(
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height / 5),
+                child: Column(
+                  children: [
+                    Text(
+                      'WakeUp',
                       style: TextStyle(
-                        decoration: TextDecoration.underline,
+                        fontSize: 25.0,
                       ),
                     ),
-                  ),
-                ],
+                    SizedBox(height: 100),
+                    _buildButton(
+                      icon: Icons.mail_outline,
+                      text: 'メールアドレスで登録',
+                    ),
+                    SizedBox(height: 20),
+                    _buildButton(
+                      icon: Icons.mail_outline,
+                      text: 'Googleで会員登録',
+                    ),
+                    SizedBox(height: 20),
+                    _buildButton(
+                      icon: Icons.mail_outline,
+                      text: 'Appleで会員登録',
+                    ),
+                    SizedBox(height: 20),
+                    _buildButton(
+                      icon: Icons.mail_outline,
+                      text: 'ゲストで利用',
+                    ),
+                    SizedBox(height: 30),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginScreen(),
+                            ));
+                      },
+                      child: Text(
+                        'ログインはこちら',
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
