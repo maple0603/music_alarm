@@ -8,6 +8,8 @@ class MailLoginScreen extends StatefulWidget {
 }
 
 class _MailLoginScreenState extends State<MailLoginScreen> {
+  bool _isObscure = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +43,13 @@ class _MailLoginScreenState extends State<MailLoginScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: TextField(
                       decoration: InputDecoration(
-                        prefixIcon: const Icon(Icons.mail_outline),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0xFFF8F8FF),
+                          ),
+                          borderRadius: BorderRadius.circular(32),
+                        ),
+                        prefixIcon: const Icon(Icons.email),
                         labelText: 'メールアドレスを入力', // ここでラベルを指定
                         labelStyle: TextStyle(
                           fontSize: 14.0, // ラベルが小さくなる
@@ -50,7 +58,7 @@ class _MailLoginScreenState extends State<MailLoginScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(32),
                           borderSide:
-                              BorderSide(color: Color(0xFFF8F8FF), width: 1),
+                              BorderSide(color: Color(0xFFF8F8FF), width: 0),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(32),
@@ -66,6 +74,52 @@ class _MailLoginScreenState extends State<MailLoginScreen> {
                       textInputAction: TextInputAction.search,
                       onChanged: (value) {},
                       onSubmitted: (value) {},
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 25.0),
+                    child: TextField(
+                      obscureText: _isObscure,
+                      decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(
+                              () {
+                                _isObscure = !_isObscure;
+                              },
+                            );
+                          },
+                          icon: Icon(_isObscure
+                              ? Icons.visibility_off
+                              : Icons.visibility),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0xFFF8F8FF),
+                          ),
+                          borderRadius: BorderRadius.circular(32),
+                        ),
+                        prefixIcon: Icon(Icons.https),
+                        labelText: 'パスワードを入力',
+                        labelStyle: TextStyle(fontSize: 14),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32),
+                          borderSide: BorderSide(
+                            color: Color(0xFFF8F8FF),
+                            width: 0,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0xFFF8F8FF),
+                            width: 0,
+                          ),
+                          borderRadius: BorderRadius.circular(32),
+                        ),
+                        fillColor: Color(0xFFF8F8FF),
+                        filled: true,
+                      ),
                     ),
                   ),
                 ],
