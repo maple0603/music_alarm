@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:music_alarm/login_page/mail_login.dart';
+
+import 'home_page/alarm_set/time_setting.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +14,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
       // home: const SignUpScreen(),
-      home: const MailLoginScreen(),
+      // home: const MailLoginScreen(),
+      home: const TimeSettingScreen(),
+      //   home: CustomBottomNavigationBar(),
+      // home: const AlarmAdditionScreen(),
     );
   }
 }

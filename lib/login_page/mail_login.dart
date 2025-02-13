@@ -122,6 +122,42 @@ class _MailLoginScreenState extends State<MailLoginScreen> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 40),
+                  Container(
+                    height: 50.0,
+                    width: 380.0,
+                    margin: EdgeInsets.symmetric(
+                      vertical: 8.0,
+                      horizontal: 25,
+                    ),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        'ログイン',
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 40),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'パスワード忘れた方はこちら',
+                      style: TextStyle(
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      '会員登録がまだの方はこちら',
+                      style: TextStyle(decoration: TextDecoration.underline),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -129,5 +165,29 @@ class _MailLoginScreenState extends State<MailLoginScreen> {
         ],
       ),
     );
+
+    Future<void> _showPassWordResetDialog(BuildContext context) async {
+      TextEditingController emailController = TextEditingController();
+
+      return showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              backgroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              insetPadding: const EdgeInsets.all(8),
+              title: const Center(
+                child: Text(
+                  'パスワードリセット',
+                  style: TextStyle(
+                      color: Colors.lightBlueAccent,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            );
+          });
+    }
   }
 }
